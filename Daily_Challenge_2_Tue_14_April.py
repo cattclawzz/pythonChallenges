@@ -47,8 +47,8 @@ Hint: Total cost = number of rolls × price per roll
 """
 
 def price(quan, price):
-    return (price/100) * quan
-print(f"Total cost: €{price(int(input('How many rolls? ')), float(input('Price per roll (cent)? '))):.2f}")
+    return price * quan
+print(f"Total cost: €{price(int(input('How many rolls? ')), float(input('Price per roll (cent)? '))/100):.2f}")
 
 print()
 """
@@ -76,5 +76,7 @@ Hint: Store each input in its own descriptive variable.
                 Total earned: €18.00
 ========================
 """
+item = input('Item name: ')
+cost = float(input('Price per item: '))
 sold = int(input("How many sold today? "))
-print(f"--- Tuck Shop Summary --- \nItem: {input('Item name: ')} \nSold: {}")
+print(f"--- Tuck Shop Summary --- \nItem: {item} \nSold: {sold} \nTotal earned: €{price(sold, cost):.2f}")
